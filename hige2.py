@@ -17,7 +17,7 @@ if not os.path.isdir(IMAGE_DIR):
 else:
     print(f"{IMAGE_DIR} already exists.")
 
-for file_name, image_url in zip(df.filename[:5], df.yahoo_image_url[:5]):
+for file_name, image_url in zip(df.filename[:20], df.yahoo_image_url[:20]):
     image = requests.get(image_url)
     with open(IMAGE_DIR + file_name + ".jpg", "wb") as f:
         f.write(image.content)
